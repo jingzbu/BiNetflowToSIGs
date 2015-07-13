@@ -13,7 +13,7 @@ import socket
 
 def readRawData(inputFile):
     """
-    Read in the fields of interest from the original raw data file.
+    Read in the fields of interest from the original raw data file
     """
 
     tempFile = open(inputFile)

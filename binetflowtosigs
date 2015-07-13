@@ -34,7 +34,7 @@ parser.add_argument('-p', default='./Data/capture20110816.binetflow', type=str, 
                     help="path to the raw data; default='./Data/capture20110816.binetflow'")
 parser.add_argument('-d', default='./Data/', type=str, \
                     help="folder for saving the output SIGs file; default='./Data/'")
-parser.add_argument('-s', default='result.sig', type=str, \
+parser.add_argument('-s', default='result.sigs', type=str, \
                     help="name of the standard output SIGs file; default='result.sigs'")
 args = parser.parse_args()
 

@@ -18,7 +18,8 @@ optional arguments:
   -s S        name of the standard output SIGs file; default='result.sigs'
 ```
 
-Example:
+Examples:
+====
 
  `$ ./binetflowtosigs -w 1`
  
