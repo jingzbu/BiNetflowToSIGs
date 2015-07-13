@@ -22,8 +22,7 @@ Example:
 
  `$ ./binetflowtosigs -w 1`
  
- `$ ./binetflowtosigs -w 0.01 -p /home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs/Data/demo/capture20110816.binetflow.sliced 
- -d ./Data/demo/ -s capture20110816.binetflow.sliced.sigs `
+ `$ ./binetflowtosigs -p ./Data/demo/capture20110816.binetflow.sliced -d ./Data/demo/ -s capture20110816.binetflow.sliced.sigs `
 
 
 Author
