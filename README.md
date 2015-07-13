@@ -1,7 +1,7 @@
 BiNetflowToSIGs
 ======
 
-BiNetflowToSIGs is short for converting BiNetflow file To Social Interaction Graphs.
+BiNetflowToSIGs is short for converting BiNetflow file To Social Interaction Graphs file.
 
 
 Usage
@@ -27,7 +27,7 @@ Author
 =============
 Jing Zhang
 
-Jing Zhang currently is a PhD student in Division of Systems Engineering, Boston University, working with Professor [Yannis Paschalidis](http://ionia.bu.edu/).
+Jing Zhang currently is a PhD student in Division of Systems Engineering at Boston University, working with Professor [Yannis Paschalidis](http://sites.bu.edu/paschalidis/).
 
 
 Email: `jzh@bu.edu`
@@ -35,5 +35,5 @@ Email: `jzh@bu.edu`
 Homepage: http://people.bu.edu/jzh/
 
 
-Copyright 2015 Jing Zhang. All rights reserved. TAHTMA is free software; you can redistribute it and/or modify it under
+Copyright 2015 Jing Zhang. All rights reserved. BiNetflowToSIGs is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software Foundation.
