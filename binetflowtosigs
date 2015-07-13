@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+"""
+This file contains all the simulation experiments
+"""
+
+from __future__ import absolute_import, division
+
+__author__ = "Jing Zhang"
+__email__ = "jingzbu@gmail.com"
+__status__ = "Development"
+
+
+import sys
+import os
+
+import argparse
+
+ROOT = os.environ.get('binetflowtosigs_ROOT')
+if ROOT is None:
+    print('Please set <binetflowtosigs_ROOT> variable in bash.')
+    sys.exit()
+if not ROOT.endswith('BiNetflowToSIGs'):
+    print('Please set <binetflowtosigs_ROOT> path variable correctly. '
+          'Please change the name of the <ROOT> folder to BiNetflowToSIGs. Other name(s) '
+          'will cause import problem.')
+    sys.exit()
+sys.path.insert(0, ROOT)
+sys.path.insert(0, ROOT.rstrip('BiNetflowToSIGs'))
+
+
+from BiNetflowToSIGs.util.util import convertBinetflowToSigs
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('-w', default=0.01, type=float, help='window size; default=0.01')
+parser.add_argument('-p', default='./Data/capture20110816.binetflow', type=str, \
+                    help="path to the raw data; default='./Data/capture20110816.binetflow'")
+parser.add_argument('-d', default='./Data/', type=str, \
+                    help="folder for saving the output SIGs file; default='./Data/'")
+parser.add_argument('-s', default='result.sig', type=str, \
+                    help="name of the standard output SIGs file; default='result.sig'")
+args = parser.parse_args()
+
+if args.w <= 0:
+    raise Exception("Invalid window size; please specify -w to be a positive number.")
+
+convertBinetflowToSigs(args).run()
