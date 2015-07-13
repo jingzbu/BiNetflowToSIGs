@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-"""
-This file contains all the simulation experiments
-"""
 
 from __future__ import absolute_import, division
 
