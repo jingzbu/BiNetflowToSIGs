@@ -15,12 +15,14 @@ optional arguments:
   -w W        window size; default=0.01
   -p P        path to the raw data; default='./Data/capture20110816.binetflow'
   -d D        folder for saving the output SIGs file; default='./Data/'
-  -s S        name of the standard output SIGs file; default='result.sig'
+  -s S        name of the standard output SIGs file; default='result.sigs'
 ```
 
 Example:
 
  `$ ./binetflowtosigs -w 1`
+ 
+ `./binetflowtosigs -w 0.01 -p /home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs/Data/demo/capture20110816.binetflow.sliced -d ./Data/demo/ -s capture20110816.binetflow.sliced.sigs `
 
 
 Author
