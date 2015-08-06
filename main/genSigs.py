@@ -1,17 +1,16 @@
 #!/usr/bin/env python
-""" A library of utility functions
+""" Main classes functions
 """
 from __future__ import absolute_import, division
-
-from ..util.util import *
 
 __author__ = "Jing Zhang"
 __email__ = "jingzbu@gmail.com"
 __status__ = "Development"
 
 
-import argparse
+from ..util.util import *
 import socket
+
 
 
 class convertBinetflowToSigs:
@@ -45,7 +44,7 @@ class convertBinetflowToSigs:
 
         # N is the number of SIGs to be constructed
         N = int((startTime[len(startTime) - 1] - startTime[0]) // win_size)
-        print 'We have %d SIGs.' %N
+        print('We have %d SIGs.' %N)
 
         # Write SIGs to a standard output file
         sigs = data_folder + result
@@ -54,7 +53,7 @@ class convertBinetflowToSigs:
                 sigFile.write(str(sortedIPList[i])+' ')
             sigFile.write('\n')
             for n in range(N):
-                print 'The SIG #%d is being constructed.' %n
+                print('The SIG #%d is being constructed.' %n)
                 sigFile.write('G%d\n' %n)
                 listEdges = []
                 for i in range(len(startTime)):
@@ -71,6 +70,6 @@ class convertBinetflowToSigs:
                 listEdges = list(set(listEdges))
                 for j in range(len(listEdges)):
                     edge = listEdges[j]
-                    print edge
+                    print(edge)
                     sigFile.write(edge)
                     sigFile.write('\n')

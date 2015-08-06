@@ -24,8 +24,7 @@ def readRawData(inputFile):
 
     for line in tempFile:
         if 'who' in line and 'Botnet' in line:
-            print 'Something wrong with the original data!'
-            break
+            raise Exception('Something wrong with the original data!')
         d_1, _, _, d_2, _, d_3, d_4, _, _, _, _, _, _, _, d_5 = line.split(',')
         startTime.append(d_1)
         srcAddr.append(d_2)
