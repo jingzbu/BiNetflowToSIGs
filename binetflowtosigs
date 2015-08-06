@@ -12,30 +12,33 @@ import os
 
 import argparse
 
-ROOT = os.environ.get('binetflowtosigs_ROOT')
+ROOT = os.environ.get("binetflowtosigs_ROOT")
 if ROOT is None:
-    print('Please set <binetflowtosigs_ROOT> variable in bash.')
+    print("Please set <binetflowtosigs_ROOT> variable in bash.")
     sys.exit()
-if not ROOT.endswith('BiNetflowToSIGs'):
-    print('Please set <binetflowtosigs_ROOT> path variable correctly. '
-          'Please change the name of the <ROOT> folder to BiNetflowToSIGs. Other name(s) '
-          'will cause import problem.')
+if not ROOT.endswith("BiNetflowToSIGs"):
+    print("Please set <binetflowtosigs_ROOT> path variable correctly. "
+          "Please change the name of the <ROOT> folder to BiNetflowToSIGs. Other name(s) "
+          "will cause import problem.")
     sys.exit()
 sys.path.insert(0, ROOT)
-sys.path.insert(0, ROOT.rstrip('BiNetflowToSIGs'))
+sys.path.insert(0, ROOT.rstrip("BiNetflowToSIGs"))
 
 
 from BiNetflowToSIGs.main.genSigs import convertBinetflowToSigs
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-w', default=1, type=float, help='window size; default=1')
-parser.add_argument('-p', default='./Data/capture20110816.binetflow.sample', type=str, \
-                    help="path to the raw data; default='./Data/capture20110816.binetflow.sample'")
-parser.add_argument('-d', default='./Data/', type=str, \
-                    help="folder for saving the output SIGs file; default='./Data/'")
-parser.add_argument('-s', default='result.sigs', type=str, \
-                    help="name of the standard output SIGs file; default='result.sigs'")
+parser.add_argument("-w", default=1, type=float, help="window size; default=1")
+parser.add_argument("-p",
+        default="/home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs_Data/capture20110816.binetflow.sample",
+        type=str, help="path to raw data; \
+        default='/home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs_Data/capture20110816.binetflow.sample'")
+parser.add_argument("-d", default="/home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs_Data/", type=str, \
+        help="folder for saving output SIGs file; \
+        default='/home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs_Data/'")
+parser.add_argument("-s", default="result.sigs", type=str, \
+        help="name of standard output SIGs file; default='result.sigs'")
 args = parser.parse_args()
 
 if args.w <= 0:
