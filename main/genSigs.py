@@ -36,11 +36,14 @@ class convertBinetflowToSigs:
         # Sort the IPs
         sortedIPList = sorted(setOfIP, key=socket.inet_aton)
 
-        print sortedIPList
-        print '-' * 40
+        print(sortedIPList)
+        print('-' * 40)
 
         # Use a dictionary to store the sorted IPs, each with an integer label
         dictIP = dict(zip(sortedIPList, range(0, len(sortedIPList))))
+
+        # Assign label to each node (IP)
+
 
         # N is the number of SIGs to be constructed
         N = int((startTime[len(startTime) - 1] - startTime[0]) // win_size)
