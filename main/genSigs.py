@@ -23,6 +23,7 @@ class convertBinetflowToSigs:
         data_folder = args.d
         raw_data = args.p
         result = args.s
+        botnet_nodes_enable = args.e
         # Call the function "preProcess" to preprocess the raw data
         # raw_data = raw_data_folder + 'capture20110816.binetflow'
         startTime, srcAddr, direc, dstAddr, label = preProcess(raw_data)
@@ -36,13 +37,24 @@ class convertBinetflowToSigs:
         # Sort the IPs
         sortedIPList = sorted(setOfIP, key=socket.inet_aton)
 
-        print(sortedIPList)
-        print('-' * 40)
+        # print(sortedIPList)
+        # print('-' * 40)
 
         # Use a dictionary to store the sorted IPs, each with an integer label
         dictIP = dict(zip(sortedIPList, range(0, len(sortedIPList))))
+        dictIP_ = dict(zip(range(0, len(sortedIPList)), sortedIPList))
 
-        # Assign label to each node (IP)
+        if botnet_nodes_enable:
+            # Obtain the nodes with "Botnet" label
+            bots = []
+            for (IP, id_) in dictIP.items():
+                for i in range(len(label)):
+                    if (IP == dstAddr[i] and label[i] == 1) or (IP == srcAddr[i] and label[i] == 1):
+                        bots.append(id_)
+                        break
+            bots = sorted(bots)
+
+            zdump(dict(dictIP=dictIP, dictIP_=dictIP_, bots=bots), data_folder + 'botnet_nodes.pkz')
 
 
         # N is the number of SIGs to be constructed

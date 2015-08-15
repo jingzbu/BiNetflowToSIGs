@@ -39,6 +39,8 @@ parser.add_argument("-d", default="/home/jzh/Dropbox/Research/Botnet_detection/B
         default='/home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs_Data/'")
 parser.add_argument("-s", default="result.sigs", type=str, \
         help="name of standard output SIGs file; default='result.sigs'")
+parser.add_argument("-e", default=False, action="store_true", \
+        help="whether or not to enable the botnet_nodes output; default=False")
 args = parser.parse_args()
 
 if args.w <= 0:
