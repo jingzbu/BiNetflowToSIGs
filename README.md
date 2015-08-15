@@ -8,7 +8,7 @@ Usage
 =====
 Assuming having set `binetflowtosigs_ROOT` path variable correctly, then type `./binetflowtosigs -h` to get the following help message:
 ```
-usage: binetflowtosigs [-h] [-w W] [-p P] [-d D] [-s S]
+usage: binetflowtosigs [-h] [-w W] [-p P] [-d D] [-s S] [-e]
 
 optional arguments:
   -h, --help  show this help message and exit
@@ -18,6 +18,7 @@ optional arguments:
   -d D        folder for saving output SIGs file; default='/home/jzh/Dropbox/R
               esearch/Botnet_detection/BiNetflowToSIGs_Data/'
   -s S        name of standard output SIGs file; default='result.sigs'
+  -e          whether or not to enable the botnet_nodes output; default=False
 ```
 
 Note: You may need to change the path to your Data folder.
@@ -26,6 +27,8 @@ Examples:
 ====
 
  `$ ./binetflowtosigs -w 0.01 -p ./demo/capture20110816.binetflow.sliced -d ./demo/`
+ 
+ `$ ./binetflowtosigs -p /home/jzh/Dropbox/Research/Botnet_detection/BiNetflowToSIGs_Data/capture20110816.binetflow.slice_13_1 -w 1 -s capture20110816.binetflow.slice_13_1.sigs -e`
 
 
 Author
