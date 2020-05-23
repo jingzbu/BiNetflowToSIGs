@@ -57,7 +57,7 @@ class convertBinetflowToSigs:
             zdump(dict(dictIP=dictIP, dictIP_=dictIP_, bots=bots), data_folder + 'botnet_nodes.pkz')
 
 
-        # N is the number of SIGs to be constructed
+        ##### N is the number of SIGs to be constructed
         N = int((startTime[len(startTime) - 1] - startTime[0]) // win_size)
         print('We have %d SIGs.' %N)
 
